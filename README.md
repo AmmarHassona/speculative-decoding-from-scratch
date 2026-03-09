@@ -98,7 +98,7 @@ The acceptance rates indicate that the issues comes from the hardware and not th
 ## How to run
 
 ```bash
-git clone https://github.com/ammarhassona/speculative-decoding
+git clone https://github.com/ammarhassona/speculative-decoding-from-scratch
 cd speculative-decoding
 python -m venv venv && source venv/bin/activate
 pip install torch transformers accelerate
