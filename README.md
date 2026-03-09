@@ -139,6 +139,13 @@ Change `device = "mps"` to `"cuda"` or `"cpu"` as needed.
 
 ---
 
+## Future Work
+
+- **Cross-family control experiment:** Run Qwen3.5-0.8B (draft) → Llama-3.2-1B (target) to test whether same-family training alignment or training data volume explains the higher acceptance rates in Qwen pairs. Requires handling mismatched tokenizer vocabularies, which the current implementation does not support.
+- **Larger model pairs:** Test with a 1B draft and 7B+ target on a GPU to measure actual wall-clock speedup under hardware conditions where speculative decoding is designed to operate.
+
+---
+
 ## Reference
 
 ```
