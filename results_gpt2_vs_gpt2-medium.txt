@@ -1,0 +1,65 @@
+============================================================
+Model pair:      gpt2 -> gpt2-medium
+Device:          mps
+max_tokens:      50
+runs_per_config: 2
+============================================================
+
+
+>>> ACCEPTANCE RATE BY PROMPT TYPE (k=4)
+
+
+--- Prompt type: conversational ---
+Prompt: 'Why did the chicken cross the road'
+  Run 1: acceptance=52.9%  speedup=0.45x
+  Run 2: acceptance=51.5%  speedup=0.64x
+  AVG: acceptance=52.2%  speedup=0.55x
+
+--- Prompt type: code ---
+Prompt: 'def fibonacci(n):'
+  Run 1: acceptance=40.0%  speedup=0.68x
+  Run 2: acceptance=48.5%  speedup=0.74x
+  AVG: acceptance=44.3%  speedup=0.71x
+
+--- Prompt type: factual ---
+Prompt: 'The theory of relativity states that'
+  Run 1: acceptance=52.9%  speedup=0.68x
+  Run 2: acceptance=34.5%  speedup=0.64x
+  AVG: acceptance=43.7%  speedup=0.66x
+
+--- Prompt type: repetitive ---
+Prompt: '1, 2, 3, 4, 5, 6, 7, 8, 9,'
+  Run 1: acceptance=44.7%  speedup=0.53x
+  Run 2: acceptance=75.0%  speedup=0.86x
+  AVG: acceptance=59.9%  speedup=0.70x
+
+
+>>> K ABLATION STUDY
+
+Prompt: 'Why did the chicken cross the road'
+
+--- k=1 ---
+  Run 1: acceptance=72.4%  speedup=0.93x
+  Run 2: acceptance=72.4%  speedup=0.93x
+  AVG: acceptance=72.4%  speedup=0.93x
+
+--- k=2 ---
+  Run 1: acceptance=65.9%  speedup=0.04x
+  Run 2: acceptance=84.2%  speedup=1.08x
+  AVG: acceptance=75.1%  speedup=0.56x
+
+--- k=4 ---
+  Run 1: acceptance=50.0%  speedup=0.83x
+  Run 2: acceptance=69.6%  speedup=1.01x
+  AVG: acceptance=59.8%  speedup=0.92x
+
+--- k=6 ---
+  Run 1: acceptance=50.0%  speedup=0.77x
+  Run 2: acceptance=28.9%  speedup=0.55x
+  AVG: acceptance=39.5%  speedup=0.66x
+
+--- k=8 ---
+  Run 1: acceptance=21.1%  speedup=0.44x
+  Run 2: acceptance=19.4%  speedup=0.41x
+  AVG: acceptance=20.2%  speedup=0.42x
+
